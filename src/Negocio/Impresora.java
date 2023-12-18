@@ -19,6 +19,7 @@ import com.itextpdf.text.Element;
 
 
 public class Impresora {
+    
 
     private Document documento = new Document();
 

@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 public class Calculadora {
 
+    
     private Ecuacion ecuacion;
     private Mensaje calculoPos;
 

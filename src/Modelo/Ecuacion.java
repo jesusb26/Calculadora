@@ -4,6 +4,7 @@ import Util.seed.Pila;
 
 public class Ecuacion {
 
+    
     String ecuacion;
 
     private Mensaje postfijo;

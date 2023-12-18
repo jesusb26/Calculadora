@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 public class MainVista extends Application {
     
+    
    @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("calculadoraVista.fxml"));
