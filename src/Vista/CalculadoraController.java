@@ -193,17 +193,6 @@ public class CalculadoraController {
             column.setReorderable(false);
 //        column.setResizable(false);
         });
-
-//        Agregar un listener para manejar el evento cuando se ingresa texto
-//        txtEcuacion.textProperty().addListener(new ChangeListener<String>() {
-//            @Override
-//            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-//                // Verificar si el texto ha cambiado y si es así, quitar el prompt
-//                if (!newValue.isEmpty()) {
-//                    txtEcuacion.setPromptText("");
-//                }
-//            }
-//        });
     }
 
 }
