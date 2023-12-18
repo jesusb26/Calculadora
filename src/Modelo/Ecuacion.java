@@ -200,6 +200,7 @@ public class Ecuacion {
         return ecuacion;
     }
 
+    
     public Mensaje getPostfijo() {
         return postfijo;
     }

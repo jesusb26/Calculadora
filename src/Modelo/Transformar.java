@@ -5,7 +5,7 @@
 package Modelo;
 
 public class Transformar {
-
+  
     private String operacion;
     private String pila;
     private String salida;

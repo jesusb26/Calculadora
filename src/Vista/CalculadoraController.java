@@ -2,9 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package Vista;
-
 
 import Modelo.Transformar;
 import Negocio.Calculadora;
@@ -21,7 +19,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-
 public class CalculadoraController {
 
     @FXML
@@ -29,7 +26,7 @@ public class CalculadoraController {
 
     @FXML
     private URL location;
-    
+
     @FXML
     private Button btnCalcular;
 
@@ -47,8 +44,8 @@ public class CalculadoraController {
 
     @FXML
     private TextField txtEcuacion;
-    
-     @FXML
+
+    @FXML
     private TableColumn<Transformar, String> columOperacion;
 
     @FXML
@@ -59,21 +56,19 @@ public class CalculadoraController {
 
     @FXML
     private TableView<Transformar> tabla;
-    
-      private Calculadora c;
-      
-      private void mostrarAlerta(String titulo, String mensaje) {
+
+    private Calculadora c;
+
+    private void mostrarAlerta(String titulo, String mensaje) {
         Alert alerta = new Alert(Alert.AlertType.ERROR);
         alerta.setTitle(titulo);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-    
-    
-    
+
     @FXML
     void calcular(ActionEvent event) {
-         try {
+        try {
             columSalida.setVisible(false);
             columPila.setPrefWidth(316);
             c.getCalculo(c.getEcuacion().transformarAPostfijo());
@@ -128,7 +123,7 @@ public class CalculadoraController {
 
     @FXML
     void calcularPrefijo(ActionEvent event) {
-         try {
+        try {
             c.getEcuacion().transformarAPrefijo();
             columSalida.setVisible(true);
             columPila.setPrefWidth(96);
@@ -151,12 +146,11 @@ public class CalculadoraController {
             mostrarAlerta("Error al calcular posfijo", "Asegúrate de que la ecuación sea válida.");
         }
 
-
     }
 
     @FXML
     void cargar(ActionEvent event) {
-         try {
+        try {
             c.cargar(txtEcuacion.getText());
         } catch (Exception e) {
             mostrarAlerta("Error al cargar la expresion", e.getMessage());
@@ -165,8 +159,8 @@ public class CalculadoraController {
 
     @FXML
     void generarPDF(ActionEvent event) {
-        
-          try {
+
+        try {
             c.crearPDF();
             Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
             alerta.setTitle("PDF generado");
@@ -177,12 +171,10 @@ public class CalculadoraController {
         }
 
     }
-    
-    
 
     @FXML
     void initialize() {
-        
+
         assert btnCalcular != null : "fx:id=\"btnCalcular\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
         assert btnCalcularPosfijo != null : "fx:id=\"btnCalcularPosfijo\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
         assert btnCalcularPrefijo != null : "fx:id=\"btnCalcularPrefijo\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
@@ -190,8 +182,8 @@ public class CalculadoraController {
         assert btnPdf != null : "fx:id=\"btnPdf\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
         assert txtEcuacion != null : "fx:id=\"txtEcuacion\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
         assert txtEcuacion != null : "fx:id=\"txtEcuacion\" was not injected: check your FXML file 'calculadoraVista.fxml'.";
-        
-         c = new Calculadora();
+
+        c = new Calculadora();
         columOperacion.setCellValueFactory(new PropertyValueFactory<>("operacion"));
         columPila.setCellValueFactory(new PropertyValueFactory<>("pila"));
         columSalida.setCellValueFactory(new PropertyValueFactory<>("salida"));
@@ -200,7 +192,7 @@ public class CalculadoraController {
             column.setReorderable(false);
 //        column.setResizable(false);
         });
-        
+
 //        Agregar un listener para manejar el evento cuando se ingresa texto
 //        txtEcuacion.textProperty().addListener(new ChangeListener<String>() {
 //            @Override
@@ -211,8 +203,6 @@ public class CalculadoraController {
 //                }
 //            }
 //        });
-        
-        }
-        
     }
-    
+
+}
