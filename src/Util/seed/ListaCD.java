@@ -64,7 +64,7 @@ public class ListaCD<T> implements Iterable<T> {
 
         for (NodoD<T> temp = this.cabeza.getSig(); temp != this.cabeza; temp = temp.getSig()) {
 
-            msg += temp.toString() + "\t";
+            msg += temp.toString()+" ";
 
         }
 
