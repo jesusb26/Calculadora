@@ -191,7 +191,8 @@ public class CalculadoraController {
 
         tabla.getColumns().forEach(column -> {
             column.setReorderable(false);
-//        column.setResizable(false);
+         column.setResizable(true);
+       
         });
     }
 
